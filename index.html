@@ -13,28 +13,58 @@
       font-family: 'Inter', sans-serif;
       color: #fff;
       height: 100vh;
+      background: url('moon.jpg') no-repeat center center/cover;
+    }
+
+    /* overlay */
+    .overlay {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.55);
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 15px;
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(8px);
+      z-index: 2;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9em;
+      opacity: 0.85;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      opacity: 1;
+      text-shadow: 0 0 5px #fff;
+    }
+
+    /* CONTENT */
+    .container {
+      position: relative;
+      z-index: 1;
+      height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-
-      background: url('moon.jpg') no-repeat center center/cover;
-    }
-
-    /* camada escura para melhorar leitura */
-    .overlay {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.55);
-      top: 0;
-      left: 0;
-    }
-
-    .container {
-      position: relative;
-      z-index: 2;
-      max-width: 800px;
+      flex-direction: column;
       padding: 20px;
     }
 
@@ -53,20 +83,24 @@
 
     .tagline {
       font-size: 1.2em;
-      margin-bottom: 15px;
-      opacity: 0.9;
+      margin-bottom: 10px;
     }
 
     .footer {
-      margin-top: 40px;
+      margin-top: 30px;
       font-size: 0.9em;
       opacity: 0.6;
     }
 
-    @media (max-width: 600px) {
-      h1 { font-size: 2.2em; }
-      h2 { font-size: 1.1em; }
+    @media (max-width: 700px) {
+      nav {
+        gap: 10px;
+      }
+      h1 {
+        font-size: 2.2em;
+      }
     }
+
   </style>
 </head>
 
@@ -74,17 +108,24 @@
 
 <div class="overlay"></div>
 
+<nav>
+  <a href="#">Location</a>
+  <a href="#">Program</a>
+  <a href="#">Participants</a>
+  <a href="#">Activities</a>
+  <a href="#">Sponsors</a>
+  <a href="#">Tours Info</a>
+  <a href="#">Catering</a>
+  <a href="#">Hotel</a>
+  <a href="#">Places to Visit</a>
+</nav>
+
 <div class="container">
   <h1>EME 2028</h1>
   <h2>Earth–Moon–Earth Conference</h2>
 
-  <p class="tagline">
-    Exploring radiowave communication via lunar reflection
-  </p>
-
-  <p class="tagline">
-    Official website coming soon
-  </p>
+  <p class="tagline">Exploring microwave communication via lunar reflection</p>
+  <p class="tagline">Official website coming soon</p>
 
   <div class="footer">
     © 2028 EME Conference
