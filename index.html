@@ -26,19 +26,21 @@
       left: 0;
       z-index: 0;
     }
+
     /* NAVBAR */
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 30px;
-  background: rgba(0,0,0,0.4);
-  backdrop-filter: blur(8px);
-  z-index: 2;
-}
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 15px;
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(8px);
+      z-index: 2;
+      flex-wrap: wrap;
+    }
 
     nav a {
       color: #fff;
@@ -65,13 +67,7 @@ nav {
       flex-direction: column;
       padding: 20px;
     }
-.logo img {
-  height: 60px;
-}
-   .menu {
-  display: center;
-  gap: 40px;
-}
+
     h1 {
       font-family: 'Orbitron', sans-serif;
       font-size: 3.5em;
@@ -96,10 +92,9 @@ nav {
       opacity: 0.6;
     }
 
-
     @media (max-width: 700px) {
       nav {
-        gap: 40px;
+        gap: 10px;
       }
       h1 {
         font-size: 2.2em;
@@ -114,32 +109,22 @@ nav {
 <div class="overlay"></div>
 
 <nav>
-  <div class="logo">
-    <img src="logo-eme2028.png" alt="EME 2028 Logo">
-  </div>
-
-  <div class="menu">
-    <a href="#">Location</a>
-    <a href="#">Program</a>
-    <a href="#">Participants</a>
-    <a href="#">Activities</a>
-    <a href="#">Sponsors</a>
-    <a href="#">Tours Info</a>
-    <a href="#">Catering</a>
-    <a href="#">Hotel</a>
-    <a href="#">Places to Visit</a>
-    <a href="#">EME sites</a>
-  </div>
+  <a href="#">Location</a>
+  <a href="#">Program</a>
+  <a href="#">Participants</a>
+  <a href="#">Activities</a>
+  <a href="#">Sponsors</a>
+  <a href="#">Tours Info</a>
+  <a href="#">Catering</a>
+  <a href="#">Hotel</a>
+  <a href="#">Places to Visit</a>
 </nav>
-.menu {
-  display: flex;
-  gap: 80px;
-}
+
 <div class="container">
   <h1>EME 2028</h1>
-  <h2>Earth–Moon–Earth Conference - August 25-27, 2028</h2>
+  <h2>Earth–Moon–Earth Conference</h2>
 
-  <p class="tagline">Exploring radiowave communication via lunar reflection</p>
+  <p class="tagline">Exploring microwave communication via lunar reflection</p>
   <p class="tagline">Official website coming soon</p>
 
   <div class="footer">
