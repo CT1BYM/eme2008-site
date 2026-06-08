@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lisbon | EME 2028 Conference</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+* {margin:0; padding:0; box-sizing:border-box;}
+
+body {
+  font-family:'Inter', sans-serif;
+  background:#000;
+  color:#fff;
+}
+
+/* NAV */
+nav {
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  z-index:100;
+}
+
+.logo img { height:60px; }
+
+.menu { display:flex; gap:25px; }
+
+.menu a {
+  color:#fff;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.menu a.active {
+  border-bottom:2px solid #fff;
+  opacity:1;
+}
+
+/* HERO */
+.hero {
+  height:60vh;
+  background:url('lisbon.jpg') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+}
+
+.hero::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+}
+
+.hero h1 {
+  position:relative;
+  z-index:2;
+  font-family:'Orbitron';
+  font-size:3em;
+}
+
+/* SECTION */
+section {
+  padding:80px 20px;
+  max-width:1100px;
+  margin:auto;
+}
+
+h2 {
+  text-align:center;
+  margin-bottom:30px;
+  font-size:2em;
+}
+
+/* GRID */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+
+/* CARD PREMIUM */
+.card {
+  position:relative;
+  overflow:hidden;
+  border-radius:12px;
+  height:240px;
+}
+
+.card img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.card .overlay {
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  display:flex;
+  align-items:flex-end;
+  padding:20px;
+}
+
+.card h3 {
+  margin:0;
+}
+
+/* TEXT */
+.text {
+  text-align:center;
+  max-width:800px;
+  margin:auto;
+  line-height:1.6;
+}
+
+/* FOOTER */
+footer {
+  text-align:center;
+  padding:40px;
+  opacity:0.6;
+  font-size:0.8em;
+}
+
+/* MOBILE */
+@media(max-width:800px){
+  .menu { display:none; }
+  .hero h1 { font-size:2em; }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    <img src="logo-eme2028.png">
+  </div>
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="lisbon.html" class="active">Location</a>
+    <a href="program.html">Program</a>
+    <a href="venue.html">Venue</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Lisbon, Portugal</h1>
+</section>
+
+<!-- INTRO -->
+<section>
+  <h2>A World-Class Destination</h2>
+  <p class="text">
+    Lisbon offers a unique combination of accessibility, safety, culture, and technical infrastructure. 
+    As one of Europe’s most vibrant capitals, it provides the perfect setting for an international 
+    conference such as EME 2028.
+  </p>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section>
+  <h2>Why Lisbon Stands Out</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <img src="airport.jpg">
+      <div class="overlay">
+        <h3>Global Accessibility</h3>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="city.jpg">
+      <div class="overlay">
+        <h3>Safe & Welcoming</h3>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="food.jpg">
+      <div class="overlay">
+        <h3>Gastronomy & Culture</h3>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- INFRASTRUCTURE -->
+<section>
+  <h2>Infrastructure & Connectivity</h2>
+
+  <p class="text">
+    Lisbon is served by a major international airport located just minutes from the city center, 
+    offering direct connections to Europe, North America, and beyond. The city features modern 
+    transport systems, high-quality hotels, and reliable digital infrastructure.
+  </p>
+</section>
+
+<!-- EXPERIENCE -->
+<section>
+  <h2>Beyond the Conference</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <img src="tram.jpg">
+      <div class="overlay">
+        <h3>Historic City Tours</h3>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="ist.jpg">
+      <div class="overlay">
+        <h3>Visit Instituto Superior Técnico</h3>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="dinner.jpg">
+      <div class="overlay">
+        <h3>Conference Social Events</h3>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FINAL STATEMENT -->
+<section>
+  <h2>Our Vision</h2>
+
+  <p class="text">
+    Lisbon is more than a location — it is an experience. By combining technical excellence with 
+    cultural richness and outstanding hospitality, the city offers the ideal environment to host 
+    a truly memorable and successful EME conference.
+  </p>
+
+  <p class="text" style="margin-top:20px; font-weight:bold;">
+    Lisbon is ready to welcome the world to EME 2028.
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2028 EME Conference · Lisbon, Portugal
+</footer>
+
+</body>
+</html>
