@@ -1,143 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>EME 2028 Conference</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>EME 2028 Conference | Lisbon</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<meta name="description" content="EME 2028 - International Earth-Moon-Earth Conference in Lisbon.">
 
-  <style>
-.logo img {
-  height: 80px;
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family:'Inter',sans-serif;
+  color:#fff;
+  background:#000;
+  scroll-behavior:smooth;
 }
-    
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      color: #fff;
-      height: 100vh;
-      background: url('moon.jpg') no-repeat center center/cover;
-    }
 
-    /* overlay */
-    .overlay {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.55);
-      top: 0;
-      left: 0;
-      z-index: 0;
-    }
+/* NAV */
+nav {
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  z-index:100;
+}
 
-    /* NAVBAR */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      display: flex;
-      justify-content: flex;
-      gap: 45px;
-      padding: 10px;
-      background: rgba(0,0,0,0.4);
-      backdrop-filter: blur(8px);
-      z-index: 2;
-      flex-wrap: wrap;
-    }
+.logo img { height:60px; }
 
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 1.2em;
-      opacity: 0.85;
-      transition: 0.3s;
-    }
+.menu { display:flex; gap:25px; }
+.menu a {
+  color:#fff;
+  text-decoration:none;
+  font-size:0.9em;
+  opacity:0.85;
+}
+.menu a:hover { opacity:1; }
 
-    nav a:hover {
-      opacity: 1;
-      text-shadow: 0 0 5px #fff;
-    }
+/* HERO */
+.hero {
+  height:100vh;
+  background:url('moon.jpg') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+}
 
-    /* CONTENT */
-    .container {
-      position: relative;
-      z-index: 1;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      flex-direction: column;
-      padding: 20px;
-    }
+.hero::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.7);
+}
 
-    h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 3.5em;
-      margin-bottom: 10px;
-      letter-spacing: 3px;
-    }
+.hero-content {
+  position:relative;
+  z-index:2;
+}
 
-    h2 {
-      font-weight: 300;
-      margin-bottom: 30px;
-      opacity: 0.85;
-    }
+.hero h1 {
+  font-family:'Orbitron';
+  font-size:4em;
+  letter-spacing:4px;
+}
 
-    .tagline {
-      font-size: 1.2em;
-      margin-bottom: 10px;
-    }
+.hero h2 {
+  margin:15px 0;
+  font-weight:300;
+}
 
-    .footer {
-      margin-top: 30px;
-      font-size: 0.9em;
-      opacity: 0.6;
-    }
+.cta a {
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 30px;
+  border:1px solid #fff;
+  color:#fff;
+  text-decoration:none;
+}
 
-    @media (max-width: 700px) {
-      nav {
-        gap: 10px;
-      }
-      h1 {
-        font-size: 2.2em;
-      }
-    }
+/* SECTIONS */
+section {
+  padding:80px 20px;
+  max-width:1100px;
+  margin:auto;
+}
 
-  </style>
+h3 {
+  font-size:2em;
+  margin-bottom:20px;
+  text-align:center;
+}
+
+/* GRID */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+/* CARDS */
+.card {
+  background:#111;
+  padding:20px;
+  border:1px solid #222;
+  transition:0.3s;
+}
+
+.card:hover {
+  transform:translateY(-5px);
+  border-color:#555;
+}
+
+/* FOOTER */
+footer {
+  background:#000;
+  padding:40px;
+  text-align:center;
+  font-size:0.8em;
+  opacity:0.6;
+}
+
+/* MOBILE */
+@media(max-width:800px){
+  .menu { display:none; }
+  .hero h1 { font-size:2.5em; }
+}
+
+</style>
 </head>
 
 <body>
 
-<div class="overlay"></div>
-
+<!-- NAV -->
 <nav>
   <div class="logo">
-    <img src="logo-eme2028.png" alt="EME 2028 Logo">
+    <img src="logo-eme2028.png">
   </div>
-  <a href="#">Location</a>
-  <a href="#">Program</a>
-  <a href="#">Participants</a>
-  <a href="#">Activities</a>
-  <a href="#">Sponsors</a>
-  <a href="#">Tours Info</a>
-  <a href="#">Catering</a>
-  <a href="#">Hotel</a>
-  <a href="#">Places to Visit</a>
+  <div class="menu">
+    <a href="#about">About</a>
+    <a href="#location">Location</a>
+    <a href="#venue">Venue</a>
+    <a href="#program">Program</a>
+    <a href="#activities">Activities</a>
+    <a href="#sponsors">Sponsors</a>
+  </div>
 </nav>
 
-<div class="container">
-  <h1>EME 2028</h1>
-  <h2>Earth–Moon–Earth Conference</h2>
-
-  <p class="tagline">Exploring radiowave communication via lunar reflection</p>
-  <p class="tagline">Official website coming soon</p>
-
-  <div class="footer">
-    © 2028 EME Conference
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>EME 2028</h1>
+    <h2>Earth–Moon–Earth Conference · Lisbon</h2>
+    <p>Exploring radiowave communication via lunar reflection</p>
+    <div class="cta">
+      <a href="#about">Discover More</a>
+    </div>
   </div>
-</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h3>About the Conference</h3>
+  <p style="text-align:center; max-width:700px; margin:auto;">
+    The EME 2028 Conference will bring together leading experts in Earth–Moon–Earth communication, 
+    advanced microwave systems, and radio science. Hosted in Lisbon, the event combines cutting-edge 
+    technical sessions with networking and cultural experiences.
+  </p>
+</section>
+
+<!-- LOCATION -->
+<section id="location">
+  <h3>Location</h3>
+  <div class="grid">
+    <div class="card">Lisbon, Portugal</div>
+    <div class="card">Easy airport access</div>
+    <div class="card">Safe, vibrant, welcoming city</div>
+  </div>
+</section>
+
+<!-- VENUE -->
+<section id="venue">
+  <h3>Conference Venue</h3>
+  <p style="text-align:center;">
+    Hosted in a premium conference hotel with full facilities for presentations, exhibitions, and networking.
+  </p>
+</section>
+
+<!-- PROGRAM -->
+<section id="program">
+  <h3>Program Highlights</h3>
+  <div class="grid">
+    <div class="card">Technical Sessions</div>
+    <div class="card">EME Experiments</div>
+    <div class="card">Workshops</div>
+    <div class="card">Keynote Talks</div>
+  </div>
+</section>
+
+<!-- ACTIVITIES -->
+<section id="activities">
+  <h3>Activities</h3>
+  <div class="grid">
+    <div class="card">City Tours</div>
+    <div class="card">Networking Events</div>
+    <div class="card">Museum Visit (IST)</div>
+    <div class="card">Social Dinner</div>
+  </div>
+</section>
+
+<!-- SPONSORS -->
+<section id="sponsors">
+  <h3>Sponsors & Partners</h3>
+  <div class="grid">
+    <div class="card">Institutional Partners</div>
+    <div class="card">Industry Sponsors</div>
+    <div class="card">Amateur Radio Community</div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section>
+  <h3>Join EME 2028</h3>
+  <p style="text-align:center;">Be part of the most important EME gathering of the decade.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2028 EME Conference · Lisbon, Portugal
+</footer>
 
 </body>
 </html>
