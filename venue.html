@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Venue | EME 2028 Conference</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+* {margin:0; padding:0; box-sizing:border-box;}
+
+body {
+  font-family:'Inter', sans-serif;
+  background:#000;
+  color:#fff;
+}
+
+/* NAV */
+nav {
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  z-index:100;
+}
+
+.logo img { height:60px; }
+
+.menu { display:flex; gap:25px; }
+
+.menu a {
+  color:#fff;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.menu a.active {
+  border-bottom:2px solid #fff;
+  opacity:1;
+}
+
+/* HERO */
+.hero {
+  height:50vh;
+  background:url('altis.jpg') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+}
+
+.hero::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+}
+
+.hero h1 {
+  position:relative;
+  z-index:2;
+  font-family:'Orbitron';
+  font-size:2.5em;
+}
+
+/* SECTION */
+section {
+  padding:80px 20px;
+  max-width:1100px;
+  margin:auto;
+  scroll-margin-top:80px;
+}
+
+h2 {
+  text-align:center;
+  margin-bottom:30px;
+  font-size:2em;
+}
+
+/* GRID */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+
+/* CARD */
+.card {
+  background:#111;
+  padding:25px;
+  border-radius:10px;
+}
+
+/* HIGHLIGHT */
+.price {
+  font-size:1.8em;
+  color:#4fd1ff;
+  font-weight:bold;
+}
+
+/* TABLE */
+table {
+  width:100%;
+  border-collapse:collapse;
+  margin-top:20px;
+}
+
+td {
+  padding:10px;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+/* FOOTER */
+footer {
+  text-align:center;
+  padding:40px;
+  opacity:0.6;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">
+    <img src="logo-eme2028.png">
+  </div>
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="lisbon.html">Location</a>
+    <a href="program.html">Program</a>
+    <a href="venue.html" class="active">Venue</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>Altis Grand Hotel, Lisbon</h1>
+</section>
+
+<section>
+  <h2>The Venue</h2>
+  <p style="text-align:center; max-width:800px; margin:auto;">
+    The Altis Grand Hotel offers a premium conference environment in the heart of Lisbon, 
+    combining modern facilities, large conference rooms, and full-service hospitality. 
+    Its central location ensures excellent accessibility and an outstanding experience for all participants.
+  </p>
+</section>
+
+<section>
+  <h2>Accommodation (3 Nights)</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Single Room</h3>
+      <p class="price">€160 / night</p>
+      <p>Total (3 nights): €480</p>
+    </div>
+
+    <div class="card">
+      <h3>Double Room</h3>
+      <p class="price">€190 / night</p>
+      <p>Total (3 nights): €570</p>
+      <p>(€285 per person)</p>
+    </div>
+
+  </div>
+
+  <p style="text-align:center; margin-top:20px;">
+    Rates include breakfast and are based on negotiated group pricing.
+  </p>
+</section>
+
+<section>
+  <h2>Conference Costs (per participant)</h2>
+
+  <table>
+    <tr><td>Conference Room Rental (3 days)</td><td>€120</td></tr>
+    <tr><td>Coffee Breaks (2/day)</td><td>€90</td></tr>
+    <tr><td>Lunch (3 days)</td><td>€135</td></tr>
+    <tr><td>Technical Equipment</td><td>€40</td></tr>
+    <tr><td>Conference Dinner</td><td>€60</td></tr>
+    <tr><td><strong>Total</strong></td><td><strong>€445</strong></td></tr>
+  </table>
+
+</section>
+
+<section>
+  <h2>Total Estimated Cost</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Single Occupancy</h3>
+      <p class="price">~ €925</p>
+      <p>(Accommodation + Conference)</p>
+    </div>
+
+    <div class="card">
+      <h3>Double Occupancy</h3>
+      <p class="price">~ €730</p>
+      <p>(per person)</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section>
+  <h2>Capacity & Suitability</h2>
+
+  <p style="text-align:center; max-width:800px; margin:auto;">
+    The venue comfortably accommodates 150 participants in a main conference room, 
+    with additional breakout areas for parallel sessions, exhibitions, and networking. 
+    All facilities are located within the same building, ensuring a seamless experience.
+  </p>
+</section>
+
+<section>
+  <h2>Why This Venue Wins</h2>
+
+  <p style="text-align:center; max-width:800px; margin:auto; line-height:1.6;">
+    The Altis Grand Hotel provides a rare combination of central location, premium quality, 
+    and cost efficiency. By hosting accommodation and conference in the same venue, 
+    logistical complexity is minimized while maximizing participant comfort and engagement.
+  </p>
+
+  <p style="text-align:center; margin-top:20px; font-weight:bold;">
+    A high-end conference experience at a highly competitive cost.
+  </p>
+
+</section>
+
+<footer>
+  © 2028 EME Conference · Lisbon, Portugal
+</footer>
+
+</body>
+</html>
