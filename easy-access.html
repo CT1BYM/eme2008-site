@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Easy Airport Access | EME 2028 Conference</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+* {margin:0; padding:0; box-sizing:border-box;}
+
+body {
+  font-family:'Inter', sans-serif;
+  background:#000;
+  color:#fff;
+}
+
+/* NAV */
+nav {
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  z-index:100;
+}
+
+.logo img { height:60px; }
+
+.menu { display:flex; gap:25px; }
+
+.menu a {
+  color:#fff;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.menu a.active {
+  border-bottom:2px solid #fff;
+  opacity:1;
+}
+
+/* HERO */
+.hero {
+  height:50vh;
+  background:url('airport.jpg') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+}
+
+.hero::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+}
+
+.hero h1 {
+  position:relative;
+  z-index:2;
+  font-family:'Orbitron';
+  font-size:2.5em;
+}
+
+/* SECTION */
+section {
+  padding:80px 20px;
+  max-width:1100px;
+  margin:auto;
+  scroll-margin-top:80px;
+}
+
+h2 {
+  text-align:center;
+  margin-bottom:30px;
+}
+
+/* GRID */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+
+/* CARD */
+.card {
+  background:#111;
+  padding:25px;
+  border-radius:10px;
+}
+
+.price {
+  color:#4fd1ff;
+  font-weight:bold;
+  font-size:1.2em;
+}
+
+/* TABLE */
+table {
+  width:100%;
+  border-collapse:collapse;
+  margin-top:20px;
+}
+
+td {
+  padding:12px;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+/* FOOTER */
+footer {
+  text-align:center;
+  padding:40px;
+  opacity:0.6;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">
+    <img src="logo-eme2028.png">
+  </div>
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="lisbon.html">Location</a>
+    <a href="program.html">Program</a>
+    <a href="venue.html">Venue</a>
+    <a href="access.html" class="active">Access</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>Easy Airport Access</h1>
+</section>
+
+<section>
+  <h2>From Airport to Venue in Minutes</h2>
+  <p style="text-align:center; max-width:800px; margin:auto;">
+    Lisbon International Airport is located just 7 km from the conference venue, ensuring 
+    fast and seamless transfers for all participants.
+  </p>
+</section>
+
+<section>
+  <h2>Transport Options</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Metro</h3>
+      <p class="price">€2 – €5</p>
+      <p>~ 20–30 minutes</p>
+      <p>Direct connection from airport to city center (Red Line)</p>
+    </div>
+
+    <div class="card">
+      <h3>Taxi / Ride Apps</h3>
+      <p class="price">€10 – €25</p>
+      <p>~ 10–15 minutes</p>
+      <p>24/7 availability directly outside arrivals</p>
+    </div>
+
+    <div class="card">
+      <h3>Bus</h3>
+      <p class="price">~ €3</p>
+      <p>~ 30–40 minutes</p>
+      <p>Direct routes to Marquês de Pombal (near venue)</p>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>Comparison</h2>
+
+  <table>
+    <tr>
+      <td><strong>Option</strong></td>
+      <td><strong>Time</strong></td>
+      <td><strong>Cost</strong></td>
+      <td><strong>Best For</strong></td>
+    </tr>
+
+    <tr>
+      <td>Metro</td>
+      <td>20–30 min</td>
+      <td>Low</td>
+      <td>Budget & solo travelers</td>
+    </tr>
+
+    <tr>
+      <td>Taxi / Uber / Bolt</td>
+      <td>10–15 min</td>
+      <td>Medium</td>
+      <td>Convenience & luggage</td>
+    </tr>
+
+    <tr>
+      <td>Bus</td>
+      <td>30–40 min</td>
+      <td>Very Low</td>
+      <td>Budget travelers</td>
+    </tr>
+
+  </table>
+
+</section>
+
+<section>
+  <h2>Key Advantages</h2>
+
+  <p style="text-align:center; max-width:800px; margin:auto; line-height:1.6;">
+    Unlike many international conference destinations, Lisbon offers a rare advantage: 
+    the airport is located within the city itself. This allows participants to reach 
+    the venue in under 15 minutes, significantly reducing travel fatigue and logistical complexity.
+  </p>
+
+  <p style="text-align:center; margin-top:20px; font-weight:bold;">
+    Fast, simple, and stress-free arrival for all attendees.
+  </p>
+
+</section>
+
+<section>
+  <h2>Strategic Advantage for EME 2028</h2>
+
+  <p style="text-align:center; max-width:800px; margin:auto;">
+    The proximity between airport and venue ensures maximum attendance efficiency, 
+    minimizes transfer risks, and enhances the overall conference experience. 
+    Participants can arrive and be at the venue in a matter of minutes — a key factor 
+    for international events.
+  </p>
+
+</section>
+
+<footer>
+  © 2028 EME Conference · Lisbon, Portugal
+</footer>
+
+</body>
+</html>
