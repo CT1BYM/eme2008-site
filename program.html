@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Program | EME 2028 Conference</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+* {margin:0; padding:0; box-sizing:border-box;}
+
+body {
+  font-family:'Inter', sans-serif;
+  background:#000;
+  color:#fff;
+}
+
+/* NAV */
+nav {
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  z-index:100;
+}
+
+.logo img { height:60px; }
+
+.menu { display:flex; gap:25px; }
+
+.menu a {
+  color:#fff;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.menu a.active {
+  border-bottom:2px solid #fff;
+  opacity:1;
+}
+
+/* HERO */
+.hero {
+  height:40vh;
+  background:url('program.jpg') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+}
+
+.hero::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+}
+
+.hero h1 {
+  position:relative;
+  z-index:2;
+  font-family:'Orbitron';
+  font-size:2.5em;
+}
+
+/* SECTION */
+section {
+  padding:80px 20px;
+  max-width:1100px;
+  margin:auto;
+  scroll-margin-top:80px;
+}
+
+h2 {
+  text-align:center;
+  margin-bottom:40px;
+  font-size:2em;
+}
+
+/* DAY BLOCK */
+.day {
+  margin-bottom:50px;
+}
+
+/* TABLE STYLE */
+.program {
+  width:100%;
+  border-collapse:collapse;
+}
+
+.program tr {
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.program td {
+  padding:12px;
+  vertical-align:top;
+}
+
+.time {
+  width:120px;
+  opacity:0.7;
+}
+
+.session {
+  font-weight:500;
+}
+
+.highlight {
+  color:#4fd1ff;
+  font-weight:bold;
+}
+
+/* FOOTER */
+footer {
+  text-align:center;
+  padding:40px;
+  opacity:0.6;
+  font-size:0.8em;
+}
+
+@media(max-width:800px){
+  .menu { display:none; }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    <img src="logo-eme2028.png">
+  </div>
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="lisbon.html">Location</a>
+    <a href="program.html" class="active">Program</a>
+    <a href="venue.html">Venue</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Conference Program</h1>
+</section>
+
+<!-- INTRO -->
+<section>
+  <h2>Technical & Social Program</h2>
+  <p style="text-align:center; max-width:800px; margin:auto;">
+    The EME 2028 Conference will feature a balanced program combining high-level technical sessions, 
+    experimental results, system demonstrations, and networking opportunities.
+  </p>
+</section>
+
+<!-- DAY 1 -->
+<section class="day">
+  <h2>Day 1 — Opening & Fundamentals</h2>
+
+  <table class="program">
+    
+    <tr><td class="time">18:00</td><td class="session highlight">Registration & Welcome Reception</td></tr>
+  </table>
+</section>
+
+<!-- DAY 2 -->
+<section class="day">
+  <h2>Day 2 — Presentations</h2>
+
+  <table class="program">
+    <tr><td class="time">09:00</td><td class="session highlight">Keynote</td></tr>
+    <tr><td class="time">10:00</td><td class="session">Session 2</td></tr>
+    <tr><td class="time">11:00</td><td class="session">Coffee Break</td></tr>
+
+    <tr><td class="time">11:30</td><td class="session">Session 3</td></tr>
+    <tr><td class="time">13:00</td><td class="session">Lunch</td></tr>
+
+    <tr><td class="time">14:30</td><td class="session">Session 4</td></tr>
+    <tr><td class="time">16:00</td><td class="session">Coffee Break</td></tr>
+
+    <tr><td class="time">16:30</td><td class="session">Panel Discussion: The future of EME</td></tr>
+    <tr><td class="time">19:30</td><td class="session highlight">Conference Dinner</td></tr>
+  </table>
+</section>
+
+<!-- DAY 3 -->
+<section class="day">
+  <h2>Day 3 — Presentations</h2>
+
+  <table class="program">
+    <tr><td class="time">09:00</td><td class="session highlight">Keynote</td></tr>
+    <tr><td class="time">10:00</td><td class="session">Session 5</td></tr>
+    <tr><td class="time">11:00</td><td class="session">Coffee Break</td></tr>
+
+    <tr><td class="time">11:30</td><td class="session">Session 6</td></tr>
+    <tr><td class="time">13:00</td><td class="session">Lunch</td></tr>
+
+    <tr><td class="time">14:30</td><td class="session">Technical Visit: Instituto Superior Técnico / Faraday Museum</td></tr>
+    <tr><td class="time">17:00</td><td class="session highlight">Closing Session & Next Conference</td></tr>
+  </table>
+</section>
+
+<!-- FINAL -->
+<section>
+  <h2>Program Highlights</h2>
+  <p style="text-align:center; max-width:800px; margin:auto;">
+    The program emphasizes cutting-edge developments in microwave EME, practical system implementation, 
+    and real-world experimental achievements. Special focus is given to emerging high-frequency bands 
+    and next-generation digital communication techniques.
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2028 EME Conference · Lisbon, Portugal
+</footer>
+
+</body>
+</html>
