@@ -30,7 +30,7 @@ nav {
   justify-content:space-between;
   align-items:center;
   padding:15px 40px;
-  background:rgba(0,0,0,0.6);
+  background:rgba(0,0,0,0.1);
   backdrop-filter:blur(10px);
   z-index:100;
 }
@@ -56,12 +56,14 @@ nav {
   text-align:center;
   position:relative;
 }
-
 .hero::after {
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.7);
+  display:none;
+}
+
+.hero h1 {
+  background: rgba(0,0,0,0.5);
+  padding: 15px 25px;
+  border-radius: 10px;
 }
 
 .hero-content {
@@ -69,11 +71,7 @@ nav {
   z-index:2;
 }
 
-.hero h1 {
-  font-family:'Orbitron';
-  font-size:4em;
-  letter-spacing:4px;
-}
+
 
 .hero h2 {
   margin:15px 0;
@@ -163,8 +161,12 @@ h3 {
   transform: scale(1.1);
 }
 
+.card .overlay {
+  transition: all 0.3s ease;
+}
+
 .card:hover .overlay {
-  background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.3));
+  background: linear-gradient(to top, rgba(0,0,0,0.25), rgba(0,0,0,0.05));
 }
 
 /* CLICKABLE */
