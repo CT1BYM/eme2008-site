@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Altis Grand Hotel | Location</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+* {margin:0; padding:0; box-sizing:border-box;}
+
+body {
+  font-family:'Inter', sans-serif;
+  background:#000;
+  color:#fff;
+}
+
+/* NAV */
+nav {
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  z-index:100;
+}
+
+.logo img { height:60px; }
+
+.menu { display:flex; gap:25px; }
+
+.menu a {
+  color:#fff;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.menu a.active {
+  border-bottom:2px solid #fff;
+  opacity:1;
+}
+
+/* HERO */
+.hero {
+  height:50vh;
+  background:url('altis-exterior.jpg') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+}
+
+.hero::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+}
+
+.hero h1 {
+  position:relative;
+  z-index:2;
+  font-family:'Orbitron';
+  font-size:2.5em;
+}
+
+/* SECTION */
+section {
+  padding:80px 20px;
+  max-width:1100px;
+  margin:auto;
+  scroll-margin-top:80px;
+}
+
+h2 {
+  text-align:center;
+  margin-bottom:30px;
+}
+
+/* MAP */
+.map {
+  width:100%;
+  height:400px;
+  border:0;
+  border-radius:10px;
+}
+
+/* GRID */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+/* CARD */
+.card {
+  background:#111;
+  padding:20px;
+  border-radius:10px;
+}
+
+/* FOOTER */
+footer {
+  text-align:center;
+  padding:40px;
+  opacity:0.6;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">
+    <img src="logo-eme2028.png">
+  </div>
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="city.html">City</a>
+    <a href="lisbon.html">Location</a>
+    <a href="venue.html">Venue</a>
+    <a href="altis.html" class="active">Hotel</a>
+    <a href="program.html">Program</a>
+    <a href="access.html">Access</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>Altis Grand Hotel</h1>
+</section>
+
+<section>
+  <h2>Prime Location in Lisbon</h2>
+  <p style="text-align:center; max-width:800px; margin:auto;">
+    Located in the heart of Lisbon, near Avenida da Liberdade, the Altis Grand Hotel offers 
+    immediate access to the city’s main cultural, commercial, and historical areas.
+  </p>
+</section>
+
+<section>
+  <h2>Map & Location</h2>
+
+  <iframe 
+    class="map"
+    src="https://www.google.com/maps?q=Altis+Grand+Hotel+Lisbon&output=embed">
+  </iframe>
+<div style="text-align:center; margin-top:25px;">
+  <a 
+    href="https://www.google.com/maps/search/?api=1&query=Altis+Grand+Hotel+Lisbon"
+    target="_blank"
+    class="map-button"
+  >
+    📍 Open in Google Maps
+  </a>
+</div>
+</section>
+
+<section>
+  <h2>Walking Distance Highlights</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Avenida da Liberdade</h3>
+      <p>5 min walk — Lisbon’s main boulevard with shops, cafés and restaurants</p>
+    </div>
+
+    <div class="card">
+      <h3>Marquês de Pombal</h3>
+      <p>8 min walk — central transport hub and city landmark</p>
+    </div>
+
+    <div class="card">
+      <h3>Príncipe Real</h3>
+      <p>10 min walk — trendy district with gardens and nightlife</p>
+    </div>
+
+    <div class="card">
+      <h3>Bairro Alto</h3>
+      <p>15 min walk — vibrant evening atmosphere and dining</p>
+    </div>
+
+    <div class="card">
+      <h3>Rossio / Baixa</h3>
+      <p>15–20 min walk — historic city center</p>
+    </div>
+
+    <div class="card">
+      <h3>Metro Access</h3>
+      <p>Nearby stations connect directly to the airport and entire city</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section>
+  <h2>Why This Location Works</h2>
+
+  <p style="text-align:center; max-width:800px; margin:auto; line-height:1.6;">
+    The central location allows participants to experience Lisbon without the need for transport. 
+    Key areas, restaurants, and cultural landmarks are all within walking distance, making the 
+    conference experience seamless and enjoyable.
+  </p>
+
+  <p style="text-align:center; margin-top:20px; font-weight:bold;">
+    Everything within reach — no logistics required.
+  </p>
+
+</section>
+
+<footer>
+  © 2028 EME Conference · Lisbon, Portugal
+</footer>
+
+</body>
+</html>
