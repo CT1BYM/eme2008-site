@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The City | EME 2028 Conference</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+* {margin:0; padding:0; box-sizing:border-box;}
+
+body {
+  font-family:'Inter', sans-serif;
+  background:#000;
+  color:#fff;
+}
+
+/* NAV */
+nav {
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  z-index:100;
+}
+
+.logo img { height:60px; }
+
+.menu { display:flex; gap:25px; }
+
+.menu a {
+  color:#fff;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.menu a.active {
+  border-bottom:2px solid #fff;
+  opacity:1;
+}
+
+/* HERO */
+.hero {
+  height:55vh;
+  background:url('lisbon-night.jpg') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+}
+
+.hero::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+}
+
+.hero h1 {
+  position:relative;
+  z-index:2;
+  font-family:'Orbitron';
+  font-size:2.5em;
+}
+
+/* SECTION */
+section {
+  padding:80px 20px;
+  max-width:1100px;
+  margin:auto;
+  scroll-margin-top:80px;
+}
+
+h2 {
+  text-align:center;
+  margin-bottom:30px;
+}
+
+/* GRID */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+
+/* CARD */
+.card {
+  position:relative;
+  height:240px;
+  border-radius:12px;
+  overflow:hidden;
+}
+
+.card img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.card .overlay {
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  display:flex;
+  align-items:flex-end;
+  padding:20px;
+}
+
+.card h3 {
+  margin:0;
+}
+
+/* TEXT */
+.text {
+  text-align:center;
+  max-width:800px;
+  margin:auto;
+  line-height:1.6;
+}
+
+/* FOOTER */
+footer {
+  text-align:center;
+  padding:40px;
+  opacity:0.6;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">
+    <img src="logo-eme2028.png">
+  </div>
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="lisbon.html">Location</a>
+    <a href="city.html" class="active">City</a>
+    <a href="venue.html">Venue</a>
+    <a href="program.html">Program</a>
+    <a href="access.html">Access</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>Safe, Vibrant, Welcoming</h1>
+</section>
+
+<section>
+  <h2>A City You Can Trust</h2>
+  <p class="text">
+    Lisbon is consistently ranked among the safest cities in Europe, offering a secure and relaxed 
+    environment for international visitors. Participants can move freely and confidently throughout 
+    the city, whether attending sessions, exploring historic neighborhoods, or enjoying evening events.
+  </p>
+</section>
+
+<section>
+  <h2>A Vibrant European Capital</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <img src="tram.jpg">
+      <div class="overlay">
+        <h3>Historic Streets & Modern Energy</h3>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="belem.jpg">
+      <div class="overlay">
+        <h3>Cultural Heritage</h3>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="nightlife.jpg">
+      <div class="overlay">
+        <h3>Dynamic Nightlife</h3>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section>
+  <h2>Welcoming by Nature</h2>
+  <p class="text">
+    Portugal is internationally recognized for its hospitality. Visitors are welcomed with warmth, 
+    openness, and a genuine sense of friendliness. English is widely spoken, making communication 
+    easy and ensuring a smooth and enjoyable stay for all attendees.
+  </p>
+</section>
+
+<section>
+  <h2>Gastronomy & Experience</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <img src="food.jpg">
+      <div class="overlay">
+        <h3>World-Class Cuisine</h3>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="restaurant.jpg">
+      <div class="overlay">
+        <h3>Authentic Dining</h3>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="wine.jpg">
+      <div class="overlay">
+        <h3>Portuguese Wines</h3>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section>
+  <h2>Why This Matters</h2>
+  <p class="text">
+    A successful conference is not only defined by its technical content, but also by the overall 
+    experience of its participants. Lisbon offers a rare balance of safety, vibrancy, and hospitality, 
+    creating the ideal environment for networking, collaboration, and memorable moments.
+  </p>
+
+  <p class="text" style="margin-top:20px; font-weight:bold;">
+    A city that makes participants feel at home — from the first moment.
+  </p>
+</section>
+
+<footer>
+  © 2028 EME Conference · Lisbon, Portugal
+</footer>
+
+</body>
+</html>
