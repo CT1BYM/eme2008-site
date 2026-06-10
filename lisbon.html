@@ -127,20 +127,36 @@ h2 {
   line-height:1.6;
 }
 
-/* FOOTER */
-footer {
-  text-align:center;
-  padding:40px;
-  opacity:0.6;
-  font-size:0.8em;
+/* 🔵 FOOTER */
+.site-footer {
+    background: linear-gradient(to right, #111111, #2a2a2a);
+    color: white;
+    padding: 20px;
+    margin-top: 60px;
 }
 
-/* MOBILE */
-@media(max-width:800px){
-  .menu { display:none; }
-  .hero h1 { font-size:2em; }
+.footer-content {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+    .cards {
+        flex-direction: column;
+    }
+
+    .hero {
+        height: 220px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+}
 </style>
 </head>
 
@@ -266,8 +282,12 @@ footer {
 </section>
 
 <!-- FOOTER -->
-<footer>
-  © 2028 EME Conference · Lisbon, Portugal
+<footer class="site-footer">
+    <div class="footer-content">
+        <span>Lisbon, Portugal</span>
+        <span>www.eme2028conference.com</span>
+        <span>© 2028 EME Conference</span>
+    </div>
 </footer>
 
 </body>
