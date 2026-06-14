@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sponsors | EME 2028 Lisbon</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="styles.css">
+
+<style>
+
+/* RESET */
+* {margin:0; padding:0; box-sizing:border-box;}
+
+body {
+  font-family:'Inter', sans-serif;
+  background:#000;
+  color:#fff;
+}
+
+/* NAV */
+nav {
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  background:rgba(0,0,0,0.05);
+  backdrop-filter:blur(10px);
+  z-index:100;
+}
+
+.logo img { height:60px; }
+
+.menu { display:flex; gap:25px; }
+
+.menu a {
+  color:#fff;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.menu a.active {
+  border-bottom:2px solid #fff;
+  opacity:1;
+}
+
+
+/* ===== PAGE-SPECIFIC ===== */
+.hero {
+  height:60vh;
+  background:url('airport.jpg') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+}
+
+.hero.small {
+  height: 40vh;
+  background: radial-gradient(circle at center, #0b3d91 0%, #050b1a 70%);
+}
+
+.hero.small h1 {
+  font-size: 42px;
+}
+
+.section {
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.divider {
+  width: 80px;
+  height: 2px;
+  background: #0b3d91;
+  margin: 15px auto 40px;
+}
+
+/* ===== GRID ===== */
+.sponsor-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+/* ===== CARD ===== */
+.sponsor-card {
+  width: 180px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.7s ease;
+}
+
+.sponsor-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sponsor-card img {
+  width: 100%;
+  filter: grayscale(00%) brightness(0.85);
+  transition: 0.4s;
+}
+
+.sponsor-card:hover img {
+  filter: grayscale(0%) brightness(1.1);
+  transform: scale(1.05);
+}
+
+.sponsor-card p {
+  font-size: 13px;
+  color: #bbb;
+  margin-top: 10px;
+}
+
+/* ===== CTA ALIGNADO ===== */
+.cta {
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(to right, #071a3a, #0b3d91);
+}
+
+.cta .btn {
+  margin-top: 20px;
+}
+/* 🔵 FOOTER */
+.site-footer {
+    background: linear-gradient(to right, #111111, #2a2a2a);
+    color: white;
+    padding: 20px;
+    margin-top: 60px;
+}
+
+.footer-content {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+    .cards {
+        flex-direction: column;
+    }
+
+    .hero {
+        height: 220px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<header>
+<nav>
+  <div class="logo">
+    <img src="logo-eme2028.png">
+  </div>
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="lisbon.html">Location</a>
+    <a href="altis.html">Hotel</a>
+    <a href="easy-access.html">Access</a>
+    <a href="city.html">City</a>
+    <a href="venue.html">Venue</a>
+    <a href="program.html">Program</a>
+    <a href="tours.html">Tours</a>
+    <a href="sponsors.html">Sponsors</a>
+  </div>
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="hero small">
+  <h1>Partners & Sponsors</h1>
+ 
+</section>
+
+<!-- CORPORATE -->
+<section class="section">
+  <h2 class="section-title">Corporate Sponsors</h2>
+  <div class="divider"></div>
+
+  <div class="sponsor-grid">
+
+    <div class="sponsor-card">
+      <img src="dxpatrol.jpg">
+      <p>RF monitoring & spectrum intelligence</p>
+    </div>
+
+    <div class="sponsor-card">
+      <img src="dubus.jpg">
+      <p>International microwave journal</p>
+    </div>
+
+    <div class="sponsor-card">
+      <img src="abreu.png">
+      <p>Official travel partner</p>
+    </div>
+
+    <div class="sponsor-card">
+      <img src="guimocircuito.png">
+      <p>RF & electronics supplier</p>
+    </div>
+
+    <div class="sponsor-card">
+      <img src="qsp.png">
+      <p>Amateur radio publication</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- INSTITUTIONAL -->
+<section class="section">
+  <h2 class="section-title">Institutional Partners</h2>
+  <div class="divider"></div>
+
+  <div class="sponsor-grid">
+
+    <div class="sponsor-card">
+      <img src="Ist.jpg">
+      <p>Leading engineering university</p>
+    </div>
+
+    <div class="sponsor-card">
+      <img src="it.jpg">
+      <p>Telecommunications research</p>
+    </div>
+
+    <div class="sponsor-card">
+      <img src="anacom.jpg">
+      <p>National communications authority</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ASSOCIATIONS -->
+<section class="section">
+  <h2 class="section-title">Amateur Radio Associations</h2>
+  <div class="divider"></div>
+
+  <div class="sponsor-grid">
+
+    <div class="sponsor-card">
+      <img src="amrad.jpg">
+      <p>Supporting amateur radio innovation</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Become a Sponsor</h2>
+  <p>Be part of the world’s leading EME event</p>
+  <a href="contact.html" class="btn">Contact Us</a>
+</section>
+
+<!-- FOOTER (igual às outras páginas) -->
+<footer class="site-footer">
+    <div class="footer-content">
+        <span>Lisbon, Portugal</span>
+        <span>www.eme2028conference.com</span>
+        <span>© 2028 EME Conference</span>
+    </div>
+</footer>
+
+<!-- ANIMATION -->
+<script>
+const cards = document.querySelectorAll('.sponsor-card');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach((entry, i) => {
+    if(entry.isIntersecting){
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, i * 100);
+    }
+  });
+}, { threshold: 0.2 });
+
+cards.forEach(card => observer.observe(card));
+</script>
+
+</body>
+</html>

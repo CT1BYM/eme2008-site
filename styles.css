@@ -1,0 +1,11 @@
+/* styles.css */
+body {
+  background: linear-gradient(to right, #071a3a, #050b1a);
+}
+.menu {
+  display: flex;
+  gap: 20px;
+}
+.btn {
+  border: 1px solid #0b3d91;
+}
