@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Participants | EME 2028 Lisbon</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+
+/* BASE */
+* { margin:0; padding:0; box-sizing:border-box; font-family:-apple-system, sans-serif; }
+body { background:#05070d; color:#fff; }
+
+/* HEADER */
+header {
+  position:fixed; width:100%; top:0;
+  backdrop-filter:blur(10px);
+  background:rgba(5,7,13,0.6);
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+.nav { display:flex; justify-content:space-between; padding:15px 10%; }
+.menu { display:flex; gap:25px; }
+.menu a { color:#ccc; text-decoration:none; }
+.menu a:hover { color:#fff; }
+
+/* HERO */
+.hero {
+  height:40vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:radial-gradient(circle,#0a1f44,#05070d);
+  margin-top:70px;
+  text-align:center;
+}
+
+/* STATS */
+.stats {
+  display:flex;
+  justify-content:space-around;
+  padding:40px 10%;
+  flex-wrap:wrap;
+  gap:20px;
+}
+.stat {
+  text-align:center;
+}
+.stat h2 {
+  font-size:2rem;
+}
+.stat p {
+  opacity:0.6;
+}
+
+/* CONTROLS */
+.controls {
+  padding:20px 10%;
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+input, select {
+  padding:10px;
+  border-radius:8px;
+  border:none;
+  background:#0f1b3d;
+  color:white;
+}
+
+/* CHART */
+.chart-container {
+  padding:40px 10%;
+}
+
+/* TABLE */
+.table-container {
+  padding:40px 10%;
+}
+table { width:100%; border-collapse:collapse; }
+td, th { padding:12px; }
+tr { border-bottom:1px solid rgba(255,255,255,0.05); }
+tr:hover { background:rgba(255,255,255,0.03); }
+
+/* FOOTER */
+footer {
+  padding:40px 10%;
+  background:#03050a;
+  opacity:0.6;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <div>EME 2028 Lisbon</div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="organizers.html">Organizers</a>
+      <a href="participants.html">Participants</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>Global Participants</h1>
+    <p>Worldwide EME Community</p>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stat"><h2 id="total">0</h2><p>Participants</p></div>
+  <div class="stat"><h2 id="countries">0</h2><p>Countries</p></div>
+</section>
+
+<!-- CONTROLS -->
+<div class="controls">
+  <input id="search" placeholder="Search...">
+  <select id="countryFilter">
+    <option value="">All Countries</option>
+  </select>
+</div>
+
+<!-- CHART -->
+<div class="chart-container">
+  <canvas id="chart"></canvas>
+</div>
+
+<!-- TABLE -->
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Callsign</th>
+        <th>Name</th>
+        <th>Country</th>
+      </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
+</div>
+
+<footer>
+  © 2028 EME Conference Lisbon · Global Participation
+</footer>
+
+<script>
+
+let participants = [];
+
+fetch("participants.json")
+.then(r=>r.json())
+.then(data=>{
+  participants=data;
+  init();
+});
+
+function init(){
+  updateStats(participants);
+  populateCountries(participants);
+  renderTable(participants);
+  renderChart(participants);
+}
+
+function updateStats(data){
+  document.getElementById("total").innerText=data.length;
+  const unique = [...new Set(data.map(p=>p.country))];
+  document.getElementById("countries").innerText=unique.length;
+}
+
+function populateCountries(data){
+  const select=document.getElementById("countryFilter");
+  const countries=[...new Set(data.map(p=>p.country))].sort();
+  countries.forEach(c=>{
+    const opt=document.createElement("option");
+    opt.value=c;
+    opt.textContent=c;
+    select.appendChild(opt);
+  });
+}
+
+function renderTable(data){
+  const tbody=document.getElementById("tbody");
+  tbody.innerHTML="";
+  data.forEach(p=>{
+    tbody.innerHTML+=`
+    <tr>
+      <td><a href="https://www.qrz.com/db/${p.callsign}" target="_blank">${p.callsign}</a></td>
+      <td>${p.name}</td>
+      <td>${p.country}</td>
+    </tr>`;
+  });
+}
+
+function renderChart(data){
+  const counts={};
+  data.forEach(p=>{
+    counts[p.country]=(counts[p.country]||0)+1;
+  });
+
+  new Chart(document.getElementById("chart"),{
+    type:'bar',
+    data:{
+      labels:Object.keys(counts),
+      datasets:[{data:Object.values(counts)}]
+    }
+  });
+}
+
+/* FILTERS */
+document.getElementById("search").addEventListener("input",filter);
+document.getElementById("countryFilter").addEventListener("change",filter);
+
+function filter(){
+  const s=document.getElementById("search").value.toLowerCase();
+  const c=document.getElementById("countryFilter").value;
+
+  const filtered=participants.filter(p=>{
+    return (!c || p.country===c) &&
+    (p.callsign.toLowerCase().includes(s) ||
+     p.name.toLowerCase().includes(s) ||
+     p.country.toLowerCase().includes(s));
+  });
+
+  renderTable(filtered);
+  updateStats(filtered);
+}
+
+</script>
+
+</body>
+</html>
