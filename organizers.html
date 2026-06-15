@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Organizers | EME 2028 Lisbon</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* NAV */
+nav {
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  background:rgba(0,0,0,0.05);
+  backdrop-filter:blur(10px);
+  z-index:100;
+}
+
+.logo img { height:60px; }
+
+.menu { display:flex; gap:25px; }
+
+.menu a {
+  color:#fff;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.menu a.active {
+  border-bottom:2px solid #fff;
+  opacity:1;
+}
+
+
+body {
+  background: #05070d;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  background: rgba(5,7,13,0.6);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10%;
+}
+
+.logo {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.menu {
+  display: flex;
+  gap: 25px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #ccc;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  color: #fff;
+}
+
+/* HERO */
+.hero {
+  height: 45vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: radial-gradient(circle at center, #0a1f44, #05070d);
+  margin-top: 70px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s ease forwards;
+}
+
+.hero p {
+  margin-top: 10px;
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 0.2s;
+}
+
+/* GRID */
+.container {
+  padding: 80px 10%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 30px;
+}
+
+/* CARD */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card {
+  background: linear-gradient(145deg, #0a0f1f, #0f1b3d);
+  border-radius: 18px;
+  padding: 35px 20px;
+  text-align: center;
+  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* Stagger animation */
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card::after {
+  content: "↗ QRZ";
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  font-size: 0.7rem;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.card:hover::after {
+  opacity: 0.6;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+}
+
+/* CHAIRMAN highlight */
+.chairman {
+  border: 1px solid rgba(255,255,255,0.2);
+  background: linear-gradient(145deg, #0d1f3f, #1c3f8a);
+}
+
+.chairman::before {
+  content: "CHAIR";
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+  opacity: 0.7;
+}
+
+/* AVATAR */
+.avatar {
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  background: linear-gradient(to right, #0b3d91, #1c6ed5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin: 0 auto 15px;
+}
+
+.callsign {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.name {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-top: 5px;
+}
+
+/* FOOTER */
+footer {
+  margin-top: 60px;
+  padding: 40px 10%;
+  background: #03050a;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <nav>
+  <div class="logo">
+    <img src="logo-eme2028.png">
+  </div>
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="lisbon.html">Location</a>
+    <a href="altis.html">Hotel</a>
+    <a href="easy-access.html">Access</a>
+    <a href="city.html">City</a>
+    <a href="venue.html">Venue</a>
+    <a href="program.html">Program</a>
+    <a href="tours.html">Tours</a>
+    <a href="organizers.html">Organizers</a>
+    <a href="sponsors.html">Sponsors</a>
+  </div>
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>Organizing Committee</h1>
+    <p>International Team Behind EME 2028</p>
+  </div>
+</section>
+
+<!-- GRID -->
+<section class="container">
+  <div class="grid" id="grid">
+
+    <!-- CHAIR -->
+    <a class="card-link" href="https://www.qrz.com/db/CT1BYM" target="_blank">
+      <div class="card chairman">
+        <div class="avatar">BYM</div>
+        <div class="callsign">CT1BYM</div>
+        <div class="name">Miguel</div>
+      </div>
+    </a>
+
+    <!-- OTHERS -->
+    <script>
+      const data = [
+        ["OK1DFC","Zdenek"],
+        ["CT1FFU","António"],
+        ["CT1WO","Victor"],
+        ["CT7AFN","Carlos"],
+        ["CT1FGW","Caria"],
+        ["PA0HRK","Hans"],
+        ["CT1EIF","Rui"],
+        ["CT2GUR","Paulo"],
+        ["CT2KJR","Rui"]
+      ];
+
+      const grid = document.getElementById("grid");
+
+      data.forEach((d, i) => {
+        const el = document.createElement("a");
+        el.href = "https://www.qrz.com/db/" + d[0];
+        el.target = "_blank";
+        el.className = "card-link";
+
+        el.innerHTML = `
+          <div class="card">
+            <div class="avatar">${d[0].slice(-3)}</div>
+            <div class="callsign">${d[0]}</div>
+            <div class="name">${d[1]}</div>
+          </div>
+        `;
+
+        grid.appendChild(el);
+      });
+
+      // STAGGER ANIMATION
+      const cards = document.querySelectorAll(".card");
+
+      cards.forEach((card, i) => {
+        setTimeout(() => {
+          card.classList.add("show");
+        }, 150 * i);
+      });
+    </script>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>© 2028 EME Conference Lisbon</div>
+  <div>
+<a href="mailto:eme2028conference@gmail.com" class="btn">Contact Us</a>
+ </div>
+</footer>
+
+</body>
+</html>
