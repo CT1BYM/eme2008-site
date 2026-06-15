@@ -32,11 +32,23 @@ header {
   z-index:1000;
 }
 
-.nav {
+/* NAV */
+nav {
+  position:fixed;
+  top:0;
+  width:100%;
   display:flex;
   justify-content:space-between;
-  padding:15px 10%;
+  align-items:center;
+  padding:15px 40px;
+  background:rgba(0,0,0,0.05);
+  backdrop-filter:blur(10px);
+  z-index:100;
 }
+
+.logo img { height:60px; }
+
+.menu { display:flex; gap:25px; }
 
 .menu {
   display:flex;
@@ -157,19 +169,28 @@ footer {
 <body>
 
 <header>
-  <div class="nav">
-    <div>EME 2028 Lisbon</div>
-    <div class="menu">
-      <a href="index.html">Home</a>
-      <a href="organizers.html">Organizers</a>
-      <a href="participants.html">Participants</a>
-    </div>
+  <nav>
+  <div class="logo">
+    <img src="logo-eme2028.png">
   </div>
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="lisbon.html">Location</a>
+    <a href="altis.html">Hotel</a>
+    <a href="easy-access.html">Access</a>
+    <a href="city.html">City</a>
+    <a href="venue.html">Venue</a>
+    <a href="program.html">Program</a>
+    <a href="tours.html">Tours</a>
+    <a href="organizers.html">Organizers</a>
+    <a href="sponsors.html">Sponsors</a>
+  </div>
+</nav>
 </header>
 
 <section class="hero">
   <div>
-    <h1>Participants PRO+</h1>
+    <h1>Participants</h1>
     <p>Global EME Network Dashboard</p>
   </div>
 </section>
