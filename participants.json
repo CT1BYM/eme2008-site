@@ -1,5 +1,7 @@
 [
+{"callsign":"CT1BYM","name":"Miguel","country":"Portugal"},
 {"callsign":"CT1DMK","name":"Luis","country":"Portugal"},
+{"callsign":"OK1DFC","name":"Zdenek","country":"Czech Republic"},
 {"callsign":"CT1FFU","name":"Antonio","country":"Portugal"},
 {"callsign":"CT1WO","name":"Victor","country":"Portugal"},
 {"callsign":"CT1FGW","name":"Caria","country":"Portugal"},
@@ -7,8 +9,7 @@
 {"callsign":"CT1EIF","name":"Rui","country":"Portugal"},
 {"callsign":"CT2KJR","name":"Rui","country":"Portugal"},
 {"callsign":"CT2GUR","name":"Paulo","country":"Portugal"},
-  {"callsign":"CT1BYM","name":"Miguel","country":"Portugal"},
-  {"callsign":"OK1DFC","name":"Zdenek","country":"Czech Republic"},
 {"callsign":"PA0HRK","name":"Harke","country":"Netherlands"},
-{"callsign":"DL7YC","name":"Manfred","country":"Germany"} 
+{"callsign":"DL7YC","name":"Manfred","country":"Germany"}, 
+{"callsign":"CT1EKD","name":"Pedro","country":"Portugal"}
 ]
