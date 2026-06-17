@@ -222,6 +222,66 @@ h3 {
     }
 }
 
+.register-section {
+  position: relative;
+  height: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background: url("logo-eme2028.png") center/cover no-repeat;
+}
+
+/* overlay suave (não escurecer demasiado!) */
+.register-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(5,11,26,0.85), rgba(5,11,26,0.4));
+}
+
+.register-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding: 20px;
+}
+
+.register-content h2 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.register-content p {
+  opacity: 0.85;
+  margin-bottom: 10px;
+}
+
+.highlight {
+  color: #00c6ff;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+/* BOTÃO */
+.register-btn {
+  display: inline-block;
+  padding: 14px 35px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  transition: 0.3s;
+}
+
+.register-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,198,255,0.4);
+}
+
 
 </style>
 </head>
@@ -497,9 +557,27 @@ h3 {
     We are committed to delivering the most memorable and impactful EME conference to date.
   </p>
 </section>
-<section>
-  <h3>Join EME 2028</h3>
-  <p style="text-align:center;">Be part of the most important EME gathering of the decade.</p>
+
+
+<section class="register-section">
+  <div class="register-overlay"></div>
+
+  <div class="register-content">
+    <h2>Register for EME 2028</h2>
+
+    <p>
+      Join leading experts and radio amateurs from around the world
+      for one of the most advanced Earth–Moon–Earth conferences ever organized.
+    </p>
+
+    <p class="highlight">
+      Lisbon, Portugal · August 25–27, 2028
+    </p>
+
+    <a href="https://forms.gle/SEU-LINK-AQUI" target="_blank" class="register-btn">
+      Register Now
+    </a>
+  </div>
 </section>
 
 <!-- FOOTER -->
