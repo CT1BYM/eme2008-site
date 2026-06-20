@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-
+/* RESET */
 * {margin:0; padding:0; box-sizing:border-box;}
 
 body {
@@ -18,19 +18,21 @@ body {
 }
 
 nav {
-  position:fixed;
+   position:fixed;
   top:0;
   width:100%;
   display:flex;
   justify-content:space-between;
+  align-items:center;
   padding:15px 40px;
   background:rgba(0,0,0,0.05);
   backdrop-filter:blur(10px);
+  z-index:100;
 }
 
 .logo img { height:60px; }
 
-.menu { display:flex; gap:20px; flex-wrap:wrap; }
+.menu { display:flex; gap:25px; flex-wrap:wrap; }
 
 .menu a {
   color:#fff;
