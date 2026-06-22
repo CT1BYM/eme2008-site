@@ -1,0 +1,13 @@
+{
+  "name": "eme2008-site",
+  "version": "1.0.0",
+  "description": "EME 2028 Conference Website",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "lint": "echo 'No linter configured for static HTML'"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.4.1"
+  },
+  "private": true
+}
