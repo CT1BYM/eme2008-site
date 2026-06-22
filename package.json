@@ -1,0 +1,13 @@
+{
+  "name": "eme2008-site",
+  "version": "1.0.0",
+  "description": "EME 2028 Conference website - Lisbon, Portugal",
+  "scripts": {
+    "dev": "npx http-server -p 3000",
+    "build": "echo 'Static site - no build required'"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.1.1"
+  },
+  "type": "module"
+}
