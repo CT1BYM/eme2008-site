@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Documentation | EME 2028 Conference</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+* {margin:0; padding:0; box-sizing:border-box;}
+
+body {
+  font-family:'Inter', sans-serif;
+  background:#000;
+  color:#fff;
+}
+
+/* NAV */
+nav {
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  background:rgba(0,0,0,0.05);
+  backdrop-filter:blur(10px);
+  z-index:100;
+}
+
+.logo img { height:60px; }
+
+.menu { display:flex; gap:25px; }
+
+.menu a {
+  color:#fff;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.menu a.active {
+  border-bottom:2px solid #fff;
+  opacity:1;
+}
+
+/* HERO */
+.hero {
+  height:60vh;
+  background:url('docs.jpg') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+}
+
+.hero::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.1);
+}
+
+.hero h1 {
+  position:relative;
+  z-index:2;
+  font-family:'Orbitron';
+  font-size:2.5em;
+}
+
+/* SECTION */
+section {
+  padding:80px 20px;
+  max-width:1100px;
+  margin:auto;
+  scroll-margin-top:80px;
+}
+
+h2 {
+  text-align:center;
+  margin-bottom:40px;
+  font-size:2em;
+}
+
+/* DAY BLOCK */
+.day {
+  margin-bottom:50px;
+}
+
+/* TABLE STYLE */
+.program {
+  width:100%;
+  border-collapse:collapse;
+}
+
+.program tr {
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.program td {
+  padding:12px;
+  vertical-align:top;
+}
+
+.time {
+  width:120px;
+  opacity:0.7;
+}
+
+.session {
+  font-weight:500;
+}
+
+.highlight {
+  color:#4fd1ff;
+  font-weight:bold;
+}
+
+/* 🔵 FOOTER */
+.site-footer {
+    background: linear-gradient(to right, #111111, #2a2a2a);
+    color: white;
+    padding: 20px;
+    margin-top: 60px;
+}
+
+.footer-content {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+    .cards {
+        flex-direction: column;
+    }
+
+    .hero {
+        height: 220px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    <img src="logo-eme2028.png">
+  </div>
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="index.html#register-section">Registration</a>
+    <a href="lisbon.html">Location</a>
+    <a href="altis.html">Hotel</a>
+    <a href="easy-access.html">Access</a>
+    <a href="city.html">City</a>
+    <a href="venue.html">Venue</a>
+    <a href="program.html">Program</a>
+    <a href="documentation.html">Documentation</a>
+    <a href="participants.html">Participants</a>
+    <a href="tours.html">Tours</a>
+    <a href="organizers.html">Organizers</a>
+    <a href="sponsors.html">Sponsors</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Conference Documentation</h1>
+</section>
+
+<style>
+:root {
+  --bg: #0b0b0c;
+  --card: #151517;
+  --border: #26262a;
+  --text: #ffffff;
+  --muted: #9a9aa0;
+  --accent: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+h1 {
+  font-size: 44px;
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin-bottom: 50px;
+}
+
+/* SECTION */
+.section {
+  margin-bottom: 60px;
+}
+
+.section h2 {
+  font-size: 22px;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media(min-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* CARD */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: #3a3a40;
+  background: #1a1a1d;
+}
+
+/* TEXT */
+.card-info {
+  max-width: 70%;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.meta {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ACTIONS */
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 7px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #000;
+}
+
+.btn-primary:hover {
+  background: #ddd;
+}
+
+.btn-secondary {
+  background: #2a2a2d;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background: #3a3a40;
+}
+
+/* BADGE */
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  padding: 3px 6px;
+  border-radius: 6px;
+  background: #2a2a2d;
+  color: #aaa;
+  margin-left: 6px;
+}
+
+/* MODAL VIDEO */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal iframe {
+  width: 80%;
+  height: 60%;
+  border: none;
+}
+
+.modal.active {
+  display: flex;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Documentation</h1>
+<div class="subtitle">Technical material, presentations and conference content</div>
+
+<!-- OFFICIAL DOCUMENTS -->
+<div class="section">
+<h2>Official Documents</h2>
+
+<div class="grid">
+
+<div class="card">
+  <div class="card-info">
+    <div class="title">EME 2028 Bid Summary <span class="badge">Official</span></div>
+    <div class="meta">Conference proposal document</div>
+  </div>
+  <div class="actions">
+    <a href="https://ih6f6hdhuiryuacd.public.blob.vercel-storage.com/Proposal%20bid%20summary-1.pdf" target="_blank" class="btn btn-primary">Download</a>
+  </div>
+</div>
+
+</div>
+</div>
+
+<!-- PAST PRESENTATIONS -->
+<div class="section">
+<h2>Past Presentations</h2>
+
+<div class="grid">
+
+<div class="card">
+  <div class="card-info">
+    <div class="title">DL7YC – 76 GHz EME - The next frontier</div>
+    <div class="meta">Millimetre wave systems</div>
+  </div>
+  <div class="actions">
+    
+    <a href="https://ih6f6hdhuiryuacd.public.blob.vercel-storage.com/Presentation%2076GHz%20V%202.1%20EME-Conference%202026.pdf" target="_blank" class="btn btn-primary">Slides</a>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-info">
+    <div class="title">PA0HRK – 23cm Dish</div>
+    <div class="meta">Antenna engineering</div>
+  </div>
+  <div class="actions">
+    <a href="#" onclick="openVideo('VIDEO_ID')" class="btn btn-secondary">Watch</a>
+    <a href="PDF_LINK" target="_blank" class="btn btn-primary">Slides</a>
+  </div>
+</div>
+
+</div>
+</div>
+
+<!-- CONFERENCE -->
+<div class="section">
+<h2>Conference Presentations</h2>
+
+<div class="grid">
+
+<div class="card">
+  <div class="card-info">
+    <div class="title">CT1BYM – 47 GHz EME Systems <span class="badge">Featured</span></div>
+    <div class="meta">25 Aug • Session 1</div>
+  </div>
+  <div class="actions">
+    <a href="#" onclick="openVideo('VIDEO_ID')" class="btn btn-secondary">Watch</a>
+    <a href="PDF_LINK" target="_blank" class="btn btn-primary">Slides</a>
+  </div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<!-- VIDEO MODAL -->
+<div class="modal" id="videoModal" onclick="closeVideo()">
+  <iframe id="videoFrame" src=""></iframe>
+</div>
+
+<script>
+function openVideo(id) {
+  const modal = document.getElementById('videoModal');
+  const frame = document.getElementById('videoFrame');
+
+  frame.src = "https://www.youtube.com/embed/" + id + "?autoplay=1";
+  modal.classList.add('active');
+}
+
+function closeVideo() {
+  const modal = document.getElementById('videoModal');
+  const frame = document.getElementById('videoFrame');
+
+  frame.src = "";
+  modal.classList.remove('active');
+}
+</script>
+
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-content">
+        <span>Lisbon, Portugal</span>
+         <a href="mailto:eme2028conference@gmail.com" class="btn">Contact Us</a>
+        <span>© 2028 EME Conference</span>
+    </div>
+</footer>
+<!-- Vercel Web Analytics -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
