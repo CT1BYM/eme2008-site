@@ -501,12 +501,8 @@ h1 {
   <div class="actions">
     
     <a href="https://ih6f6hdhuiryuacd.public.blob.vercel-storage.com/Presentation%2076GHz%20V%202.1%20EME-Conference%202026.pdf" target="_blank" class="btn btn-primary">Slides</a>
-<a href="#" onclick="openVideo('BP2a.mp4'); return false;" class="btn btn-secondary">
-  Video1
-</a>
-<a href="#" onclick="openVideo('dl7yc.mp4'); return false;" class="btn btn-secondary">
-  Video2
-</a>
+<a href="#" onclick="openVideo(''); return false;" class="btn btn-secondary">Video1</a>
+<a href="#" onclick="openVideo(''); return false;" class="btn btn-secondary">Video2</a>
   </div>
 </div>
 
@@ -554,50 +550,20 @@ h1 {
 </div>
 
 <script>
-function openVideo(input) {
+function openVideo(id) {
   const modal = document.getElementById('videoModal');
-  const iframe = document.getElementById('videoFrame');
-  const video = document.getElementById('videoPlayer');
+  const frame = document.getElementById('videoFrame');
 
-  // reset
-  iframe.style.display = "none";
-  video.style.display = "none";
-  iframe.src = "";
-  video.src = "";
-
-  // 👉 detectar se é YouTube ou ficheiro
-  if (input.includes("youtube") || input.length <= 15) {
-    let id = input;
-
-    if (input.includes("youtube")) {
-      id = input.split('v=')[1]?.split('&')[0] ||
-           input.split('/').pop().split('?')[0];
-    }
-
-    iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
-    iframe.style.display = "block";
-
-  } else {
-    video.src = input;
-    video.style.display = "block";
-    video.play();
-  }
-
+  frame.src = "https://www.youtube.com/embed/" + id + "?autoplay=1";
   modal.classList.add('active');
-  document.body.style.overflow = 'hidden';
 }
 
 function closeVideo() {
   const modal = document.getElementById('videoModal');
-  const iframe = document.getElementById('videoFrame');
-  const video = document.getElementById('videoPlayer');
+  const frame = document.getElementById('videoFrame');
 
-  iframe.src = "";
-  video.pause();
-  video.src = "";
-
+  frame.src = "";
   modal.classList.remove('active');
-  document.body.style.overflow = '';
 }
 </script>
 <!-- GALLERY -->
