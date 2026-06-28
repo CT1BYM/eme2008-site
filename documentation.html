@@ -543,8 +543,16 @@ h1 {
 
 
 <!-- VIDEO MODAL -->
-<div class="modal" id="videoModal" onclick="closeVideo()">
-  <iframe id="videoFrame" src="" onclick="event.stopPropagation()"></iframe>
+<div class="video-modal" id="videoModal">
+  <div class="video-backdrop" onclick="closeVideo()"></div>
+
+  <div class="video-container">
+    <button class="video-close" onclick="closeVideo()">✕</button>
+
+    <div class="video-wrapper">
+      <iframe id="videoFrame" src="" allow="autoplay; fullscreen"></iframe>
+    </div>
+  </div>
 </div>
 
 <script>
