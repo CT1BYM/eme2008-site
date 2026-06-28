@@ -542,7 +542,7 @@ h1 {
 
 <!-- VIDEO MODAL -->
 <div class="modal" id="videoModal" onclick="closeVideo()">
-  <iframe id="videoFrame" src=""></iframe>
+  <iframe id="videoFrame" src="" onclick="event.stopPropagation()"></iframe>
 </div>
 
 <script>
