@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Participants | EME 2028 Lisbon</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background:#05070d;
+  color:#fff;
+}
+
+/* HEADER */
+header {
+  position:fixed;
+  top:0;
+  width:100%;
+  backdrop-filter:blur(10px);
+  background:rgba(5,7,13,0.6);
+  border-bottom:1px solid rgba(255,255,255,0.05);
+  z-index:1000;
+}
+
+/* NAV */
+nav {
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  background:rgba(0,0,0,0.05);
+  backdrop-filter:blur(10px);
+  z-index:100;
+}
+
+.logo img { height:60px; }
+
+.menu { display:flex; gap:25px; }
+
+.menu {
+  display:flex;
+  gap:20px;
+}
+
+.menu a {
+  color:#aaa;
+  text-decoration:none;
+}
+
+.menu a:hover {
+  color:#fff;
+}
+
+/* HERO */
+.hero {
+  margin-top:70px;
+  height:35vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:radial-gradient(circle,#0a1f44,#05070d);
+}
+
+.hero h1 {
+  font-size:2.8rem;
+}
+
+/* STATS */
+.stats {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:20px;
+  padding:40px 10%;
+}
+
+.stat {
+  background:linear-gradient(145deg,#0a0f1f,#0f1b3d);
+  padding:20px;
+  border-radius:14px;
+  text-align:center;
+}
+
+.stat h2 {
+  font-size:2rem;
+}
+
+/* CONTROLS */
+.controls {
+  padding:0 10% 30px;
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+input, select {
+  padding:10px;
+  border-radius:8px;
+  border:none;
+  background:#0f1b3d;
+  color:white;
+  outline:none;
+}
+
+/* MAP */
+.map-box {
+  padding:0 10% 40px;
+}
+
+canvas {
+  background:#0a0f1f;
+  border-radius:14px;
+  padding:10px;
+}
+
+/* TABLE */
+.table-wrap {
+  padding:0 10% 80px;
+  overflow-x:auto;
+}
+
+table {
+  width:100%;
+  border-collapse:collapse;
+}
+
+th, td {
+  padding:12px;
+  text-align:left;
+}
+
+tr {
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+tr:hover {
+  background:rgba(255,255,255,0.03);
+}
+
+a {
+  color:#4da3ff;
+  text-decoration:none;
+}
+
+/* FOOTER */
+.site-footer {
+    background: linear-gradient(to right, #111111, #2a2a2a);
+    color: white;
+    padding: 20px;
+    margin-top: 60px;
+}
+
+.footer-content {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+    .cards {
+        flex-direction: column;
+    }
+
+    .hero {
+        height: 220px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+  <div class="logo">
+    <img src="logo-eme2028.png">
+  </div>
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="index.html#register-section">Registration</a>
+    <a href="lisbon.html">Location</a>
+    <a href="altis.html">Hotel</a>
+    <a href="easy-access.html">Access</a>
+    <a href="city.html">City</a>
+    <a href="venue.html">Venue</a>
+    <a href="program.html">Program</a>
+    <a href="documentation.html">Documentation</a>
+    <a href="participants.html">Participants</a>
+    <a href="tours.html">Tours</a>
+    <a href="organizers.html">Organizers</a>
+    <a href="sponsors.html">Sponsors</a>
+  </div>
+</nav>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>Confirmed Attendees</h1>
+    <p>Global EME Network Dashboard</p>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stat"><h2 id="total">0</h2><p>Confirmed Attendees</p></div>
+  <div class="stat"><h2 id="countries">0</h2><p>Countries</p></div>
+</section>
+
+<!-- CONTROLS -->
+<section class="controls">
+  <input id="search" placeholder="Search callsign, name...">
+  <select id="country"></select>
+</section>
+
+<!-- MAP -->
+<section class="map-box">
+  <canvas id="map"></canvas>
+</section>
+
+<!-- TABLE -->
+<section class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Callsign</th>
+<th>Name</th>
+<th>Country</th>
+</tr>
+</thead>
+<tbody id="tbody"></tbody>
+</table>
+</section>
+
+<footer class="site-footer">
+    <div class="footer-content">
+        <span>Lisbon, Portugal</span>
+        <a href="mailto:eme2028conference@gmail.com" class="btn">Contact Us</a>
+        <span>© 2028 EME Conference</span>
+       </div>
+</footer>
+
+<script>
+
+let data = [];
+
+fetch("confirmed.json?v=" + Date.now())
+.then(r=>r.json())
+.then(d=>{
+  data=d;
+  init();
+});
+
+function init(){
+  updateStats(data);
+  renderTable(data);
+  fillCountries(data);
+  drawChart(data);
+}
+
+function updateStats(d){
+  document.getElementById("total").innerText = d.length;
+  document.getElementById("countries").innerText =
+    [...new Set(d.map(x=>x.country))].length;
+}
+
+function renderTable(d){
+  const tbody=document.getElementById("tbody");
+  tbody.innerHTML="";
+  d.forEach(p=>{
+    tbody.innerHTML+=`
+      <tr>
+        <td><a href="https://www.qrz.com/db/${p.callsign}" target="_blank">${p.callsign}</a></td>
+        <td>${p.name}</td>
+        <td>${p.country}</td>
+      </tr>`;
+  });
+}
+
+function fillCountries(d){
+  const sel=document.getElementById("country");
+  const c=[...new Set(d.map(x=>x.country))];
+  c.forEach(x=>{
+    const o=document.createElement("option");
+    o.value=x;
+    o.textContent=x;
+    sel.appendChild(o);
+  });
+}
+
+document.getElementById("search").addEventListener("input",filter);
+document.getElementById("country").addEventListener("change",filter);
+
+function filter(){
+  const s=document.getElementById("search").value.toLowerCase();
+  const c=document.getElementById("country").value;
+
+  const f=data.filter(p=>
+    (!c || p.country===c) &&
+    (p.callsign.toLowerCase().includes(s) ||
+     p.name.toLowerCase().includes(s))
+  );
+
+  renderTable(f);
+  updateStats(f);
+}
+
+/* SIMPLE WORLD VIEW (COUNTRY BARS) */
+function drawChart(d){
+  const ctx=document.getElementById("map");
+
+  const counts={};
+  d.forEach(x=>{
+    counts[x.country]=(counts[x.country]||0)+1;
+  });
+
+  new Chart(ctx,{
+    type:"bar",
+    data:{
+      labels:Object.keys(counts),
+      datasets:[{
+        data:Object.values(counts)
+      }]
+    },
+    options:{
+      plugins:{legend:{display:false}}
+    }
+  });
+}
+
+</script>
+<!-- Vercel Web Analytics -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
