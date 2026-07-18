@@ -16,7 +16,7 @@
   },
   {
     "callsign": "CT1FFU",
-    "name": "António",
+    "name": "Antonio",
     "country": "Portugal"
   },
   {
@@ -78,5 +78,10 @@
     "callsign": "CT1TE",
     "name": "António",
     "country": "Portugal"
+  },
+  {
+    "callsign": "W1QA",
+    "name": "Bob",
+    "country": "United States"
   }
 ]
