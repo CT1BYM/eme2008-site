@@ -120,6 +120,30 @@ h2 {
 .btn:hover {
   background: #00b8db;
 }
+.btn-outline {
+  display: inline-block;
+  padding: 10px 18px;
+  color: #00d4ff;
+  border: 1.5px solid #00d4ff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  background: transparent;
+  transition: all 0.25s ease;
+}
+
+.btn-outline:hover {
+  background: #00d4ff;
+  color: #000;
+}
+.btn-outline {
+  backdrop-filter: blur(4px);
+  border: 1.5px solid rgba(0,212,255,0.7);
+}
+
+.btn-outline:hover {
+  box-shadow: 0 0 12px rgba(0,212,255,0.6);
+}
 /* 🔵 FOOTER */
 .site-footer {
     background: linear-gradient(to right, #111111, #2a2a2a);
@@ -200,7 +224,7 @@ h2 {
   <a 
     href="https://www.google.com/maps/search/?api=1&query=Altis+Grand+Hotel+Lisbon"
     target="_blank"
-    class="btn"
+    class="btn-outline"
   >
     📍 Open in Google Maps
   </a>
@@ -209,7 +233,7 @@ h2 {
 <a 
     href="https://www.altishotels.com/en/altis-grand-hotel/"
     target="_blank"
-    class="btn"
+    class="btn-outline"
   >
     Hotel website
   </a>
