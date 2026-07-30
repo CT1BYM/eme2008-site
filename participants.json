@@ -83,5 +83,10 @@
     "callsign": "W1QA",
     "name": "Bob",
     "country": "United States"
+  },
+  {
+    "callsign": "PA3DRK",
+    "name": "Steef",
+    "country": "Netherlands"
   }
 ]
